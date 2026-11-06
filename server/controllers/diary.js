@@ -1,10 +1,10 @@
 const Diary = require('../models/Diary')
 
 const index = async (req, res) => {
+    // console.log("hit")
     try {
-        const diary = await Diary.showAll();
+        const diary = await Diary.getAll();
         res.status(200).send(diary)
-
     }catch (err) {
         res.status(500).send({err:'Server Error'})
     }
@@ -23,7 +23,7 @@ const show = async (req,res) =>{
 
 const create = async (req,res) =>{
     try {
-        const newDiary = await Dairy.create (req.body);
+        const newDiary = await Diary.create (req.body);
         res.status(201).send(newDiary)
 
     }catch(err) {
@@ -35,8 +35,8 @@ const update = async (req, res) => {
     const id = req.params.id
 
     try {
-        const diary = await Dairy.show(name)
-        const result = await Dairy.update(req.body)
+        const diary = await Diary.show(id)
+        const result = await diary.update(req.body)
 
         res.status(200).send(result)
     } catch(err) {
@@ -47,10 +47,9 @@ const update = async (req, res) => {
 const destroy = async (req, res)=>{
     const id = req.params.id
     try {
-        const diary = await Fruit.show(id)
+        const diary = await Diary.show(id)
         await diary.destroy()
         res.sendStatus(204)
-
     }catch (err){
         res.status(404).send({error: err})
     }
