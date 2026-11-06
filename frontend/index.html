@@ -12,7 +12,9 @@
     <script defer src="script.js"></script>
 </head>
 
-<body>
+<body style="--bg-image: url('https://static.vecteezy.com/system/resources/thumbnails/071/874/399/small/open-lined-notebook-photo.jpeg');">
+
+
 
     <header>
        <b> Bridget Jones Dairy </b>
@@ -20,20 +22,24 @@
 
     <main class="container mt-4">
 
-        <section id="welcome">
-            <h1>Hello Bridget</h1>
-            <h2>Entry your diary entry below</h2>
-        </section>
+    <section id="welcome" class="w-50 text-center">
+        <h1>Hello Bridget</h1>
+        <h2>Enter your diary entry below</h2>
+    </section>
 
         <section id="create-entry">
             <form>
-                <h2>Add a diary entry:</h2>
-                <input type="text" name="date" placeholder="Date of entry" required>
-                <input type="text" name="title" placeholder="Title of entry">
-                <input type="text" name="context" placeholder="Diary entry" required>
+                <h2 class="w-50 text-center">Add a diary entry:</h2>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+                <input type="text" name="title" placeholder="Title of entry"> <br> <br>
+                
+                <textarea name="context" placeholder="Diary entry ..." maxlength="2000" rows="15" style="width: 50%;" required></textarea>
+                <br>
                 <input type="submit" value="Submit entry" id="button">
             </form>
         </section>
+
 
         <section id="search-entries">
 

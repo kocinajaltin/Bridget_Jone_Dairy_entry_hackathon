@@ -1,0 +1,118 @@
+/*===== Global =====*/
+:root {
+  --main-font: "Ysabeau Office", sans-serif;
+  --heading-font: "Diphylleia", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  letter-spacing: 0.8px;
+
+  background-image: var(--bg-image);
+  background-size: cover;          
+  background-position: center;     
+  background-attachment: fixed;    
+  background-repeat: no-repeat; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  letter-spacing: 1px;
+}
+
+.adjust-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.btn-main {
+  background-image: linear-gradient(
+    to right,
+    #9EC5AB,
+    #00000027
+  );
+  border-radius: 100vh;
+  border: inherit;
+  --bs-btn-border-width: 0 !important;
+  --bs-btn-color: #ffffffee;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #104F55;
+  --bs-btn-hover-border-color: #104F55;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  box-shadow: 1px 3px 7px -5px #9EC5AB;
+}
+
+.home {
+  min-height: 100vh;
+}
+
+.card {
+  background-color: #ffffffbd;
+  box-shadow: 3px 3px 17px -8px #00000091;
+}
+
+h1 {
+  color: #085b24;
+  text-shadow: -2px 1px 0px #003e4c27;
+  background-color: rgb(210, 244, 210)
+}
+
+h4 {
+  color: #9EC5AB;
+  font-size: 19px;
+}
+
+#quote {
+  color: #0697b827;
+  font-style: italic;
+}
+
+#author {
+  color: #9EC5AB;
+  margin-top: 6px;
+}
+
+@media screen and (max-width: 415px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h1::first-letter {
+    font-size: 45px;
+  }
+
+  #quote {
+    font-size: 18px;
+  }
+
+  #author {
+    font-size: 13px;
+  }
+
+  .btn-main {
+    font-size: 13px;
+  }
+}
+
+#inputText {
+  flex-grow: 1;
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3, em {
+  font-size: 1.5rem;
+}

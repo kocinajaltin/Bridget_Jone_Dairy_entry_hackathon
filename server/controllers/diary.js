@@ -23,8 +23,8 @@ const show = async (req,res) =>{
 
 const create = async (req,res) =>{
     try {
-        const newDiary = await Fruit.create (req.body);
-        res.status(201).send(newFruit)
+        const newDiary = await Dairy.create (req.body);
+        res.status(201).send(newDiary)
 
     }catch(err) {
         res.status(409).send ({error: err})
@@ -35,12 +35,24 @@ const update = async (req, res) => {
     const id = req.params.id
 
     try {
-        const fruit = await Fruit.show(name)
-        const result = await fruit.update(req.body)
+        const diary = await Dairy.show(name)
+        const result = await Dairy.update(req.body)
 
         res.status(200).send(result)
     } catch(err) {
         res.status(404).send({ error: err })
+    }
+}
+
+const destroy = async (req, res)=>{
+    const id = req.params.id
+    try {
+        const diary = await Fruit.show(id)
+        await diary.destroy()
+        res.sendStatus(204)
+
+    }catch (err){
+        res.status(404).send({error: err})
     }
 }
 
